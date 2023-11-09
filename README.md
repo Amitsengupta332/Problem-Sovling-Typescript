@@ -2,10 +2,12 @@
 
 **Question 1: What are some benefits of using TypeScript over JavaScript in a project?
 **Answer: There Are several Benefit using Typescript over Javascript in a Project: 
-            1. Strongly Typed 
-            2. Code Readibility
-            3. Less Bug or Find error easily .
-            4. Better Coding
+1. Strongly Typed 
+2. Code Readibility
+3. Less Bug or Find error easily .
+4. Better Coding
+
+
 **Question 2: What is the purpose of the optional chaining (?.) and nullish coalescing (??) operators in TypeScript, and how do they work? Provide an example for each
 ** Answer:
 Optional Chaining:  When properties on an object may be deeply nested, maybe undefined, or null, optional chaining is used to safely access properties or invoke methods on the object.it help avoid error when trying to access property of that does may not exist.
