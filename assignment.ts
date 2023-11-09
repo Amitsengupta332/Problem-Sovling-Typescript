@@ -3,14 +3,12 @@
     const problem1 = (value: string | number): number | string => {
         if (typeof value === "string") {
             return value.length;
-        } else if (typeof value === "number") {
-            return value * value;
         } else {
-            throw new Error("Value must be a string or a number");
+            return value * value;
         }
     }
-    const stringResult = problem1("amit");
-    const numberResult = problem1(5);
+    const stringResult = problem1("amit sengupta");
+    const numberResult = problem1(10);
 
     // console.log("String Result:", stringResult);
     // console.log("Number Result:", numberResult);
@@ -24,7 +22,6 @@
             street: string;
         }
     }
-
     const getAddressCity = (person: Person): string | undefined => {
         return person.address?.city
     }
@@ -58,10 +55,9 @@
     const cat = new Cat();
     const dog = {
     }
-    // console.log(getAnimal(cat));
+    // console.log(getAnimal(dog));
 
     //Problem 4
-
     const Problem4 = (mixedData: (string | number)[]): number => {
         let total = 0;
         mixedData.forEach((item) => {
@@ -71,7 +67,7 @@
         });
         return total;
     }
-    const mixedData: (string | number)[] = [10, 'two', 3, 'four', 5]
+    const mixedData: (string | number)[] = [0, 'two', 3, 'four', 5]
     // console.log(Problem4(mixedData));
 
     // Problem 5
@@ -85,7 +81,6 @@
         name: string,
         licenseNumber: number
     }
-
     const CombinedInterface = (car: Car, driver: Driver) => {
         return {
             ...car,
@@ -102,7 +97,69 @@
         name: 'Amit',
         licenseNumber: 123456
     }
-    console.log(CombinedInterface(car, driver));
+    // console.log(CombinedInterface(car, driver));
 
     // Problem 6
+    const problem6 = (params: unknown) => {
+        if (Array.isArray(params) && params.every((item) => typeof item === 'number')) {
+            let sum = 0;
+            params.forEach((item) => (sum += item))
+            console.log('sum of number', sum);
+        } else {
+            console.log('parameter is not an array of number');
+        }
+    }
+    // problem6([10, 20, 30, 40])
+    // problem6(['apple', 'mango'])
+
+    //Problem 7
+    const findFirstOccurrence = <T>(array: T[], value: T): number => {
+        return array.indexOf(value);
+    };
+
+    const numbers: number[] = [1, 2, 3, 4, 5, 2];
+
+    const strings: string[] = ["apple", "banana", "cherry", "date", "apple"];
+
+    const targetNumber = 5;
+
+    const targetString = "date";
+
+    const indexInNumbers = findFirstOccurrence(numbers, targetNumber);
+
+    const indexInStrings = findFirstOccurrence(strings, targetString);
+
+    // console.log(indexInNumbers); 
+    // console.log(indexInStrings);  
+
+    //problem 8
+    interface Product {
+        name: string,
+        price: number,
+        quantity: number
+    }
+
+    const CalculateTotalCost = (products: Product[]): number => {
+        let totalCost = 0;
+        products.map((product) => {
+            totalCost += product.price * product.quantity;
+        })
+
+        return totalCost;
+    }
+
+    const Shopping: Product[] = [
+        {
+            name: "match",
+            price: 10,
+            quantity: 5
+        },
+        {
+            name: "apple",
+            price: 10,
+            quantity: 3
+        }
+    ]
+
+    // console.log(CalculateTotalCost(Shopping));
 }
